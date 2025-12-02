@@ -23,9 +23,29 @@ class LostOnAnIslandApp extends StatelessWidget {
 
 GameState _initialGame() {
   final phases = <String, GamePage>{
-
     'start': GamePage(
       id: 'start',
+      appBarTitle: 'Friday Night Choices',
+      imageAsset: 'assets/start.png',
+      aspectRatio: 16 / 18,
+      headline: 'Friday Night Choices',
+      body: '',
+      choices: const [
+        GameChoice(
+          text: 'Start',
+          nextId: 'ch1_intro',
+          ph: 0,
+          mh: 0,
+          tc: 0,
+          ss: 0,
+          cr: 0,
+        ),
+      ],
+    ),
+
+    // CHAPTER 1
+    'ch1_intro': GamePage(
+      id: 'ch1_intro',
       appBarTitle: 'Chapter 1 – Preseason',
       imageAsset: 'assets/ch1_intro.png',
       aspectRatio: 16 / 18,
@@ -43,8 +63,6 @@ GameState _initialGame() {
         ),
       ],
     ),
-
-    // CHAPTER 1 – PRESEASON & FIRST IMPRESSIONS
 
     'ch1_p1_first_day': GamePage(
       id: 'ch1_p1_first_day',
@@ -132,7 +150,6 @@ GameState _initialGame() {
         ),
       ],
     ),
-
     'ch1_p4_first_hit': GamePage(
       id: 'ch1_p4_first_hit',
       appBarTitle: 'Chapter 1 – Page 4',
@@ -423,7 +440,7 @@ GameState _initialGame() {
       ],
     ),
 
-    // CHAPTER 2 INTRO
+    // CHAPTER 2
     'ch2_intro': GamePage(
       id: 'ch2_intro',
       appBarTitle: 'Chapter 2 – Midseason Pressure',
@@ -563,7 +580,6 @@ GameState _initialGame() {
       ],
     ),
 
-    // Page 18 – Guidance Counselor
     'ch2_p18_guidance': GamePage(
       id: 'ch2_p18_guidance',
       appBarTitle: 'Chapter 2 – Page 18',
@@ -593,7 +609,6 @@ GameState _initialGame() {
       ],
     ),
 
-    // Page 19 – Lunch Tension
     'ch2_p19_lunch_tension': GamePage(
       id: 'ch2_p19_lunch_tension',
       appBarTitle: 'Chapter 2 – Page 19',
@@ -623,7 +638,6 @@ GameState _initialGame() {
       ],
     ),
 
-    // Page 20 – Sleepless Night
     'ch2_p20_sleepless': GamePage(
       id: 'ch2_p20_sleepless',
       appBarTitle: 'Chapter 2 – Page 20',
@@ -653,7 +667,6 @@ GameState _initialGame() {
       ],
     ),
 
-    // Page 21 – Game 2 Decision
     'ch2_p21_game2': GamePage(
       id: 'ch2_p21_game2',
       appBarTitle: 'Chapter 2 – Page 21',
@@ -683,7 +696,6 @@ GameState _initialGame() {
       ],
     ),
 
-    // Page 22 – Bus Ride
     'ch2_p22_bus': GamePage(
       id: 'ch2_p22_bus',
       appBarTitle: 'Chapter 2 – Page 22',
@@ -713,7 +725,6 @@ GameState _initialGame() {
       ],
     ),
 
-    // Page 23 – Confrontation
     'ch2_p23_confrontation': GamePage(
       id: 'ch2_p23_confrontation',
       appBarTitle: 'Chapter 2 – Page 23',
@@ -743,7 +754,6 @@ GameState _initialGame() {
       ],
     ),
 
-    // Page 24 – Trainer Follow-Up
     'ch2_p24_trainer': GamePage(
       id: 'ch2_p24_trainer',
       appBarTitle: 'Chapter 2 – Page 24',
@@ -773,7 +783,6 @@ GameState _initialGame() {
       ],
     ),
 
-    // Page 25 – Scout Rumor (End of Chapter 2)
     'ch2_p25_scout_rumor': GamePage(
       id: 'ch2_p25_scout_rumor',
       appBarTitle: 'Chapter 2 – Page 25',
@@ -784,7 +793,7 @@ GameState _initialGame() {
       choices: const [
         GameChoice(
           text: 'Decide you will do whatever it takes to impress.',
-          nextId: 'ch3_p27_pre_playoff',
+          nextId: 'ch3_intro',
           ph: -5,
           mh: -5,
           tc: 10,
@@ -793,7 +802,7 @@ GameState _initialGame() {
         ),
         GameChoice(
           text: 'Decide you will play smart for your future.',
-          nextId: 'ch3_p27_pre_playoff',
+          nextId: 'ch3_intro',
           ph: 5,
           mh: 10,
           tc: -5,
@@ -801,6 +810,557 @@ GameState _initialGame() {
           cr: -5,
         ),
       ],
+    ),
+    'ch3_intro': GamePage(
+      id: 'ch3_intro',
+      appBarTitle: 'Chapter 3 – Playoffs & Breaking Point',
+      imageAsset: 'assets/ch3_intro.png',
+      aspectRatio: 16 / 18,
+      headline: 'Chapter 1: Preseason & First Impressions',
+      body: '',
+      choices: const [
+        GameChoice(
+          text: 'Begin Chapter 3',
+          nextId: 'ch3_p27_injury',
+          ph: 0,
+          mh: 0,
+          tc: 0,
+          ss: 0,
+          cr: 0,
+        ),
+      ],
+    ),
+    // CHAPTER 3 – PLAYOFFS & BREAKING POINT
+    'ch3_p27_injury': GamePage(
+      id: 'ch3_p27_injury',
+      appBarTitle: 'Chapter 3 – Page 27',
+      imageAsset: 'assets/ch3_p27_injury.png',
+      aspectRatio: 16 / 14,
+      headline: 'Pre-Playoff Game Injury',
+      body: '',
+      choices: const [
+        GameChoice(
+          text: 'Say you’re fine and jog back out, hiding the limp.',
+          nextId: 'ch3_p28_doctor_visit',
+          ph: -15,
+          mh: -10,
+          tc: 10,
+          ss: 10,
+          cr: 15,
+        ),
+        GameChoice(
+          text: 'Admit both your ankle and head feel wrong.',
+          nextId: 'ch3_p28_doctor_visit',
+          ph: 15,
+          mh: 10,
+          tc: -10,
+          ss: -5,
+          cr: -10,
+        ),
+      ],
+    ),
+
+    'ch3_p28_doctor_visit': GamePage(
+      id: 'ch3_p28_doctor_visit',
+      appBarTitle: 'Chapter 3 – Page 28',
+      imageAsset: 'assets/ch3_p28_doctor.png',
+      aspectRatio: 16 / 14,
+      headline: 'Doctor Visit',
+      body: '',
+      choices: const [
+        GameChoice(
+          text: 'Accept the doctor’s recommendation and rest.',
+          nextId: 'ch3_p29_party',
+          ph: 20,
+          mh: 15,
+          tc: -10,
+          ss: -10,
+          cr: -15,
+        ),
+        GameChoice(
+          text: 'Push back, asking if there’s any way to get cleared.',
+          nextId: 'ch3_p29_party',
+          ph: -5,
+          mh: -10,
+          tc: 5,
+          ss: 5,
+          cr: 10,
+        ),
+      ],
+    ),
+
+    'ch3_p29_party': GamePage(
+      id: 'ch3_p29_party',
+      appBarTitle: 'Chapter 3 – Page 29',
+      imageAsset: 'assets/ch3_p29_party.png',
+      aspectRatio: 16 / 14,
+      headline: 'Party While Symptomatic',
+      body: '',
+      choices: const [
+        GameChoice(
+          text: 'Drink heavily and party hard to forget the stress.',
+          nextId: 'ch3_p30_blackout',
+          ph: -10,
+          mh: -5,   // psychological crash after short-term relief
+          tc: 5,
+          ss: 10,
+          cr: 10,
+        ),
+        GameChoice(
+          text: 'Stay for a bit but avoid drinking, then leave early.',
+          nextId: 'ch3_p30_blackout',
+          ph: 5,
+          mh: 5,
+          tc: -2,
+          ss: -5,
+          cr: 0,
+        ),
+      ],
+    ),
+
+    'ch3_p30_blackout': GamePage(
+      id: 'ch3_p30_blackout',
+      appBarTitle: 'Chapter 3 – Page 30',
+      imageAsset: 'assets/ch3_p30_blackout.png',
+      aspectRatio: 16 / 14,
+      headline: 'Classroom Blackout',
+      body: '',
+      choices: const [
+        GameChoice(
+          text: 'Tell Ms. Carter what has been happening.',
+          nextId: 'ch3_p31_new_play',
+          ph: 5,
+          mh: 10,
+          tc: 0,
+          ss: -2,
+          cr: -5,
+        ),
+        GameChoice(
+          text: 'Keep it to yourself and blame stress.',
+          nextId: 'ch3_p31_new_play',
+          ph: 0,
+          mh: -10,
+          tc: 0,
+          ss: 2,
+          cr: 5,
+        ),
+      ],
+    ),
+
+    'ch3_p31_new_play': GamePage(
+      id: 'ch3_p31_new_play',
+      appBarTitle: 'Chapter 3 – Page 31',
+      imageAsset: 'assets/ch3_p31_new_play.png',
+      aspectRatio: 16 / 14,
+      headline: 'New Play Centered on You',
+      body: '',
+      choices: const [
+        GameChoice(
+          text: 'Fully commit to the high-risk trick play.',
+          nextId: 'ch3_p32_first_half',
+          ph: -5,
+          mh: -5,
+          tc: 10,
+          ss: 10,
+          cr: 10,
+        ),
+        GameChoice(
+          text: 'Suggest a safer version of the play.',
+          nextId: 'ch3_p32_first_half',
+          ph: 5,
+          mh: 5,
+          tc: -5,
+          ss: -5,
+          cr: -5,
+        ),
+      ],
+    ),
+
+    'ch3_p32_first_half': GamePage(
+      id: 'ch3_p32_first_half',
+      appBarTitle: 'Chapter 3 – Page 32',
+      imageAsset: 'assets/ch3_p32_first_half.png',
+      aspectRatio: 16 / 14,
+      headline: 'Rivalry Game: First Half',
+      body: '',
+      choices: const [
+        GameChoice(
+          text: 'Tell Coach you’re good and tell Ms. Hall you’re fine.',
+          nextId: 'ch3_p33_halftime',
+          ph: -10,
+          mh: -10,
+          tc: 10,
+          ss: 10,
+          cr: 15,
+        ),
+        GameChoice(
+          text: 'Quietly tell Ms. Hall you’re not feeling right.',
+          nextId: 'ch3_p33_halftime',
+          ph: 10,
+          mh: 10,
+          tc: -10,
+          ss: -5,
+          cr: -10,
+        ),
+      ],
+    ),
+
+    'ch3_p33_halftime': GamePage(
+      id: 'ch3_p33_halftime',
+      appBarTitle: 'Chapter 3 – Page 33',
+      imageAsset: 'assets/ch3_p33_halftime.png',
+      aspectRatio: 16 / 14,
+      headline: 'Halftime Decision',
+      body: '',
+      choices: const [
+        GameChoice(
+          text: 'Say you’ll play, no matter what.',
+          nextId: 'ch3_p34_hit',
+          ph: -15,
+          mh: -10,
+          tc: 15,
+          ss: 10,
+          cr: 20,
+        ),
+        GameChoice(
+          text: 'Tell Coach you need to sit or limit snaps.',
+          nextId: 'ch3_p34_hit',
+          ph: 15,
+          mh: 10,
+          tc: -15,
+          ss: -10,
+          cr: -15,
+        ),
+      ],
+    ),
+
+    'ch3_p34_hit': GamePage(
+      id: 'ch3_p34_hit',
+      appBarTitle: 'Chapter 3 – Page 34',
+      imageAsset: 'assets/ch3_p34_hit.png',
+      aspectRatio: 16 / 14,
+      headline: 'Third Quarter: Targeting Temptation',
+      body: '',
+      choices: const [
+        GameChoice(
+          text: 'Go for the massive, high hit.',
+          nextId: 'ch3_p35_final_drive',
+          ph: -5,
+          mh: -5,
+          tc: 10,
+          ss: 10,
+          cr: 10,
+        ),
+        GameChoice(
+          text: 'Make a clean, safe tackle.',
+          nextId: 'ch3_p35_final_drive',
+          ph: 0,
+          mh: 5,
+          tc: -5,
+          ss: -5,
+          cr: -5,
+        ),
+      ],
+    ),
+
+    'ch3_p35_final_drive': GamePage(
+      id: 'ch3_p35_final_drive',
+      appBarTitle: 'Chapter 3 – Page 35',
+      imageAsset: 'assets/ch3_p35_final_drive.png',
+      aspectRatio: 16 / 14,
+      headline: 'Final Drive: Hero Ball or Smart Play',
+      body: '',
+      choices: const [
+        GameChoice(
+          text: 'Lower your shoulder and fight for the first down.',
+          nextId: 'ch3_p36_postgame',
+          ph: -20,
+          mh: -10,
+          tc: 15,
+          ss: 15,
+          cr: 20,
+        ),
+        GameChoice(
+          text: 'Step out and preserve your body.',
+          nextId: 'ch3_p36_postgame',
+          ph: 0,
+          mh: 5,
+          tc: -10,
+          ss: -10,
+          cr: -5,
+        ),
+      ],
+    ),
+    'ch3_p36_postgame': GamePage(
+      id: 'ch3_p36_postgame',
+      appBarTitle: 'Chapter 3 – Page 36',
+      imageAsset: 'assets/ch3_p36_postgame.png',
+      aspectRatio: 16 / 14,
+      headline: 'Post-Game Noise',
+      body: '',
+      choices: const [
+        GameChoice(
+          text: 'Play it off as “all part of the game.”',
+          nextId: 'ch4_intro',
+          ph: -5,
+          mh: -5,
+          tc: 5,
+          ss: 10,
+          cr: 5,
+        ),
+        GameChoice(
+          text: 'Mention player safety and brain health.',
+          nextId: 'ch4_intro',
+          ph: 5,
+          mh: 10,
+          tc: -5,
+          ss: -5,
+          cr: -5,
+        ),
+      ],
+    ),
+
+    // CHAPTER 4 – CONSEQUENCES & ENDINGS
+    'ch4_intro': GamePage(
+      id: 'ch4_intro',
+      appBarTitle: 'Chapter 4 – Consequences & Endings',
+      imageAsset: 'assets/ch1_intro.png',
+      aspectRatio: 16 / 18,
+      headline: 'Chapter 4: Preseason & First Impressions',
+      body: '',
+      choices: const [
+        GameChoice(
+          text: 'Begin Chapter 4',
+          nextId: 'ch4_p37_intro',
+          ph: 0,
+          mh: 0,
+          tc: 0,
+          ss: 0,
+          cr: 0,
+        ),
+      ],
+    ),
+
+    'ch4_p37_intro': GamePage(
+      id: 'ch4_p37_intro',
+      appBarTitle: 'Chapter 4 – Page 37',
+      imageAsset: 'assets/ch4_p37_scholarship.png',
+      aspectRatio: 16 / 14,
+      headline: 'Scholarship Meeting',
+      body: '',
+      choices: const [
+        GameChoice(
+          text: 'Accept the offer and promise to prioritize health.',
+          nextId: 'ch4_p42_college_future',
+          ph: 10,
+          mh: 10,
+          tc: 0,
+          ss: 10,
+          cr: 0,
+        ),
+        GameChoice(
+          text: 'Turn down the offer and choose a future away from high-contact football.',
+          nextId: 'ch4_p43_youth_coach',
+          ph: 20,
+          mh: -5,
+          tc: -10,
+          ss: -5,
+          cr: -10,
+        ),
+      ],
+    ),
+
+    'ch4_p38_neuro_followup': GamePage(
+      id: 'ch4_p38_neuro_followup',
+      appBarTitle: 'Chapter 4 – Page 38',
+      imageAsset: 'assets/ch4_p38_neurologist.png',
+      aspectRatio: 16 / 14,
+      headline: 'Neurologist Follow-Up',
+      body: '',
+      choices: const [
+        GameChoice(
+          text: 'Decide to fully retire from contact football immediately.',
+          nextId: 'ch4_p43_youth_coach',
+          ph: 30,
+          mh: 20,
+          tc: -10,
+          ss: -5,
+          cr: -20,
+        ),
+        GameChoice(
+          text: 'Decide to play one more season, against medical advice.',
+          nextId: 'ch4_p44_cte_struggles',
+          ph: -10,
+          mh: -10,
+          tc: 5,
+          ss: 5,
+          cr: 20,
+        ),
+      ],
+    ),
+    'ch4_p39_empty_locker': GamePage(
+      id: 'ch4_p39_empty_locker',
+      appBarTitle: 'Chapter 4 – Page 39',
+      imageAsset: 'assets/ch4_p39_empty_locker.png',
+      aspectRatio: 16 / 14,
+      headline: 'Empty Locker Room Reflection',
+      body: '',
+      choices: const [
+        GameChoice(
+          text: 'Leave the helmet in the locker and walk out without it.',
+          nextId: 'ch4_p43_youth_coach',
+          ph: 10,
+          mh: 10,
+          tc: -10,
+          ss: -5,
+          cr: -10,
+        ),
+        GameChoice(
+          text: 'Put it on one last time, feeling its weight.',
+          nextId: 'ch4_p44_cte_struggles',
+          ph: 0,
+          mh: -5,
+          tc: 0,
+          ss: 0,
+          cr: 5,
+        ),
+      ],
+    ),
+
+    'ch4_p40_parent_talk': GamePage(
+      id: 'ch4_p40_parent_talk',
+      appBarTitle: 'Chapter 4 – Page 40',
+      imageAsset: 'assets/ch4_p40_parent_talk.png',
+      aspectRatio: 16 / 14,
+      headline: 'Parent Conversation About Quitting',
+      body: '',
+      choices: const [
+        GameChoice(
+          text: 'Tell them you’re stepping away from playing to protect your future.',
+          nextId: 'ch4_p43_youth_coach',
+          ph: 20,
+          mh: 15,
+          tc: -5,
+          ss: -5,
+          cr: -10,
+        ),
+        GameChoice(
+          text: 'Tell them you’re going to keep playing and chase the dream.',
+          nextId: 'ch4_p44_cte_struggles',
+          ph: -10,
+          mh: -10,
+          tc: 5,
+          ss: 5,
+          cr: 15,
+        ),
+      ],
+    ),
+
+    'ch4_p41_team_meeting': GamePage(
+      id: 'ch4_p41_team_meeting',
+      appBarTitle: 'Chapter 4 – Page 41',
+      imageAsset: 'assets/ch4_p41_team_meeting.png',
+      aspectRatio: 16 / 14,
+      headline: 'Team Culture Meeting',
+      body: '',
+      choices: const [
+        GameChoice(
+          text: 'Speak up in favor of better safety and honest reporting.',
+          nextId: 'ch4_p45_school_assembly',
+          ph: 5,
+          mh: 10,
+          tc: -5,
+          ss: 5,
+          cr: -5,
+        ),
+        GameChoice(
+          text: 'Echo the old-school “toughness above all” mindset.',
+          nextId: 'ch4_p47_ending_star_damaged',
+          ph: -5,
+          mh: -5,
+          tc: 10,
+          ss: 5,
+          cr: 10,
+        ),
+      ],
+    ),
+    'ch4_p42_college_future': GamePage(
+      id: 'ch4_p42_college_future',
+      appBarTitle: 'Chapter 4 – Page 42',
+      imageAsset: 'assets/ch4_p42_college_future.png',
+      aspectRatio: 16 / 14,
+      headline: 'Future: College Campus (Healthier Path)',
+      body: '',
+      choices: const [],
+    ),
+    'ch4_p43_youth_coach': GamePage(
+      id: 'ch4_p43_youth_coach',
+      appBarTitle: 'Chapter 4 – Page 43',
+      imageAsset: 'assets/ch4_p43_youth_coach.png',
+      aspectRatio: 16 / 14,
+      headline: 'Future: Coaching Youth Team',
+      body: '',
+      choices: const [],
+    ),
+
+    'ch4_p44_cte_struggles': GamePage(
+      id: 'ch4_p44_cte_struggles',
+      appBarTitle: 'Chapter 4 – Page 44',
+      imageAsset: 'assets/ch4_p44_cte_struggles.png',
+      aspectRatio: 16 / 14,
+      headline: 'Future: Struggling with Symptoms',
+      body: '',
+      choices: const [],
+    ),
+
+    'ch4_p45_school_assembly': GamePage(
+      id: 'ch4_p45_school_assembly',
+      appBarTitle: 'Chapter 4 – Page 45',
+      imageAsset: 'assets/ch4_p45_school_assembly.png',
+      aspectRatio: 16 / 14,
+      headline: 'Speaking at School Assembly',
+      body: '',
+      choices: const [],
+    ),
+
+    'ch4_p46_ending_healthy_balance': GamePage(
+      id: 'ch4_p46_ending_healthy_balance',
+      appBarTitle: 'Chapter 4 – Page 46',
+      imageAsset: 'assets/ch4_p46_ending_healthy_balance.png',
+      aspectRatio: 16 / 14,
+      headline: 'Ending Path: Healthy Balance',
+      body: '',
+      choices: const [],
+    ),
+
+    'ch4_p47_ending_star_damaged': GamePage(
+      id: 'ch4_p47_ending_star_damaged',
+      appBarTitle: 'Chapter 4 – Page 47',
+      imageAsset: 'assets/ch4_p47_ending_star_damaged.png',
+      aspectRatio: 16 / 14,
+      headline: 'Ending Path: Star but Damaged',
+      body: '',
+      choices: const [],
+    ),
+
+    'ch4_p48_ending_burnout_isolation': GamePage(
+      id: 'ch4_p48_ending_burnout_isolation',
+      appBarTitle: 'Chapter 4 – Page 48',
+      imageAsset: 'assets/ch4_p48_ending_burnout.png',
+      aspectRatio: 16 / 14,
+      headline: 'Ending Path: Burnout & Isolation',
+      body: '',
+      choices: const [],
+    ),
+
+    'ch4_p49_ending_tragic_cte_story': GamePage(
+      id: 'ch4_p49_ending_tragic_cte_story',
+      appBarTitle: 'Chapter 4 – Page 49',
+      imageAsset: 'assets/ch4_p49_ending_cte_story.png',
+      aspectRatio: 16 / 14,
+      headline: 'Ending Path: Tragic CTE Awareness Story',
+      body: '',
+      choices: const [],
     ),
   };
 
