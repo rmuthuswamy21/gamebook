@@ -71,7 +71,7 @@ class _GameScreenState extends State<GameScreen> {
                         ),
                       ),
                     ),
-                  const Divider(),
+                  const Divider(height: 16),
                   Padding(
                     padding:
                         const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4),
@@ -84,23 +84,23 @@ class _GameScreenState extends State<GameScreen> {
                     ),
                   ),
                   StatTracker(stats: stats),
-                  const Divider(),
+                  const Divider(height: 12),
                   Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(6.0),
                     child: Text(
                       page.headline,
                       style: const TextStyle(fontSize: 22, color: Colors.black),
                     ),
                   ),
-                  const Divider(),
+                  const Divider(height: 12),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    padding: const EdgeInsets.symmetric(horizontal: 6.0),
                     child: Text(
                       page.body,
                       style: const TextStyle(fontSize: 16, color: Colors.black),
                     ),
                   ),
-                  const SizedBox(height: 8),
+                  const SizedBox(height: 4),
                   for (final c in page.choices)
                     Row(
                       children: [

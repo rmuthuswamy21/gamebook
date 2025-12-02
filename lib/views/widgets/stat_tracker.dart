@@ -11,78 +11,88 @@ class StatTracker extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: PlayerStatType.values
-          .map(
-            (type) => _StatCard(
-              type: type,
-              stats: stats,
-            ),
-          )
-          .toList(),
+    final data = PlayerStatType.values
+        .map(
+          (type) => _StatDatum(
+            type: type,
+            value: stats.valueOf(type),
+          ),
+        )
+        .toList();
+
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8),
+      child: Row(
+        children: [
+          for (int i = 0; i < data.length; i++) ...[
+            Expanded(child: _DonutStat(stat: data[i])),
+            if (i != data.length - 1) const SizedBox(width: 2),
+          ]
+        ],
+      ),
     );
   }
 }
 
-class _StatCard extends StatelessWidget {
+class _StatDatum {
   final PlayerStatType type;
-  final PlayerStats stats;
+  final double value;
 
-  static const Map<PlayerStatType, Color> _colors = {
-    PlayerStatType.physicalHealth: Colors.redAccent,
-    PlayerStatType.mentalHealth: Colors.indigo,
-    PlayerStatType.teamChemistry: Colors.green,
-    PlayerStatType.socialStatus: Colors.orange,
-  };
-
-  const _StatCard({
+  const _StatDatum({
     required this.type,
-    required this.stats,
+    required this.value,
   });
+}
+
+class _DonutStat extends StatelessWidget {
+  final _StatDatum stat;
+
+  const _DonutStat({required this.stat});
+
+  Color _colorForValue(double value) {
+    if (value <= 40) {
+      return Colors.red.shade900;
+    }
+    final normalized = ((value - 40) / 60).clamp(0.0, 1.0);
+    return Color.lerp(
+          Colors.orangeAccent,
+          Colors.lightGreenAccent.shade400,
+          normalized,
+        ) ??
+        Colors.green;
+  }
 
   @override
   Widget build(BuildContext context) {
-    final value = stats.valueOf(type);
-    final color = _colors[type] ?? Colors.blueGrey;
+    final color = _colorForValue(stat.value);
     final theme = Theme.of(context).textTheme;
 
     return Card(
-      margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
+      elevation: 2,
       child: Padding(
-        padding: const EdgeInsets.all(12),
+        padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 4),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
           children: [
-            Row(
-              children: [
-                Text(
-                  '${type.shortLabel} • ${type.label}',
-                  style: theme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
-                ),
-                const Spacer(),
-                Text(
-                  '${value.toStringAsFixed(0)}/100',
-                  style: theme.bodyMedium?.copyWith(color: Colors.black54),
-                ),
-              ],
-            ),
-            const SizedBox(height: 8),
-            ClipRRect(
-              borderRadius: const BorderRadius.all(Radius.circular(4)),
-              child: LinearProgressIndicator(
-                value: value / 100,
-                minHeight: 10,
-                color: color,
-                backgroundColor: Colors.grey.shade300,
+            Text(
+              stat.type.shortLabel,
+              textAlign: TextAlign.center,
+              style: theme.titleMedium?.copyWith(
+                fontWeight: FontWeight.bold,
+                letterSpacing: 1.5,
               ),
             ),
-            const SizedBox(height: 8),
-            Text(
-              type.description,
-              style: theme.bodySmall?.copyWith(color: Colors.black87),
-            ),
             const SizedBox(height: 4),
+            SizedBox(
+              height: 26,
+              width: 26,
+              child: CircularProgressIndicator(
+                value: stat.value / 100,
+                strokeWidth: 6,
+                valueColor: AlwaysStoppedAnimation<Color>(color),
+                backgroundColor: Colors.grey.shade200,
+              ),
+            ),
           ],
         ),
       ),
