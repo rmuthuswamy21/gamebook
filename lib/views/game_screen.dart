@@ -33,6 +33,7 @@ class _GameScreenState extends State<GameScreen> {
           appBar: AppBar(
             backgroundColor: Colors.indigo,
             title: Text(page.appBarTitle),
+            toolbarHeight: 32.0,
           ),
           body: SafeArea(
             child: SingleChildScrollView(
@@ -40,9 +41,8 @@ class _GameScreenState extends State<GameScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   if (isChestPage)
-                    // Animated chest image on the chest page
                     Padding(
-                      padding: const EdgeInsets.only(top: 8.0),
+                      padding: EdgeInsets.zero,
                       child: Center(
                         child: AnimatedContainer(
                           width: _sizes[_iteration],
@@ -51,23 +51,24 @@ class _GameScreenState extends State<GameScreen> {
                           decoration: BoxDecoration(
                             image: DecorationImage(
                               image: AssetImage(page.imageAsset),
-                              fit: BoxFit.cover,
+                              fit: BoxFit.contain,
                             ),
                           ),
                         ),
                       ),
                     )
                   else
-                    // All other pages use the regular static image
-                    AspectRatio(
-                      aspectRatio: page.aspectRatio,
-                      child: Image.asset(
-                        page.imageAsset,
-                        fit: BoxFit.cover,
-                        width: double.infinity,
+                    Padding(
+                      padding: EdgeInsets.zero,
+                      child: AspectRatio(
+                        aspectRatio: page.aspectRatio,
+                        child: Image.asset(
+                          page.imageAsset,
+                          fit: BoxFit.contain,
+                          width: double.infinity,
+                        ),
                       ),
                     ),
-
                   const Divider(),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
@@ -85,8 +86,6 @@ class _GameScreenState extends State<GameScreen> {
                     ),
                   ),
                   const SizedBox(height: 8),
-
-                  // Choices
                   for (final c in page.choices)
                     Row(
                       children: [
@@ -101,15 +100,12 @@ class _GameScreenState extends State<GameScreen> {
                         Flexible(child: Text(c.text)),
                       ],
                     ),
-
                   const SizedBox(height: 24),
                   const Divider(),
-
                   Center(
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        // Animate button appears ONLY on chest page
                         if (isChestPage) ...[
                           ElevatedButton.icon(
                             onPressed: _cycleChestAnimation,
@@ -124,9 +120,9 @@ class _GameScreenState extends State<GameScreen> {
                           ),
                           const SizedBox(width: 16),
                         ],
-
-                        // Restart button
-                        if (page.id != 'start' && page.id != 'first_choice' && page.id != 'pathB_B2') ...[
+                        if (page.id != 'start' &&
+                            page.id != 'first_choice' &&
+                            page.id != 'pathB_B2') ...[
                           ElevatedButton.icon(
                             onPressed: () {
                               notifier.value = notifier.value.copyWith(
@@ -144,16 +140,13 @@ class _GameScreenState extends State<GameScreen> {
                           ),
                           const SizedBox(width: 16),
                         ],
-
-                        // Load & Save (always visible)
                         const ChoiceLoad(),
                         const SizedBox(width: 12),
                         ChoiceSave(sceneID: page.id),
                       ],
                     ),
                   ),
-
-                  const SizedBox(height: 24),
+                  const SizedBox(height: 48),
                 ],
               ),
             ),

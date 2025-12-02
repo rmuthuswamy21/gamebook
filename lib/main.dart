@@ -28,7 +28,7 @@ GameState _initialGame() {
   'start': GamePage(
     id: 'start',
     appBarTitle: 'Chapter 1 – Page 1',
-    imageAsset: 'assets/ch1_p1_morning.png',
+    imageAsset: 'assets/CH01_01.png',
     aspectRatio: 16 / 18,
     headline: 'First Day, Last Chance',
     body: '',
