@@ -34,7 +34,7 @@ class _GameScreenState extends State<GameScreen> {
         return Scaffold(
           appBar: AppBar(
             backgroundColor: Colors.indigo,
-            title: Text(page.appBarTitle),
+            title: Text(page.headline),
             toolbarHeight: 32.0,
           ),
           body: SafeArea(
@@ -84,14 +84,6 @@ class _GameScreenState extends State<GameScreen> {
                     ),
                   ),
                   StatTracker(stats: stats),
-                  const Divider(height: 12),
-                  Padding(
-                    padding: const EdgeInsets.all(6.0),
-                    child: Text(
-                      page.headline,
-                      style: const TextStyle(fontSize: 22, color: Colors.black),
-                    ),
-                  ),
                   const Divider(height: 12),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 6.0),
