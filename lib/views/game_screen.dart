@@ -157,7 +157,7 @@ class _GameScreenState extends State<GameScreen> {
                         ],
                         const ChoiceLoad(),
                         const SizedBox(width: 12),
-                        ChoiceSave(sceneID: page.id),
+                        const ChoiceSave(),
                       ],
                     ),
                   ),
