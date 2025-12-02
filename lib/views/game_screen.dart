@@ -15,6 +15,14 @@ class _GameScreenState extends State<GameScreen> {
   final List<double> _sizes = [250, 400, 800];
   int _iteration = 0;
 
+  String _cteEndingFor(double cteRisk) {
+    if (cteRisk < 20) return 'ch4_ending_none';
+    if (cteRisk < 40) return 'ch4_ending_stage1';
+    if (cteRisk < 60) return 'ch4_ending_stage2';
+    if (cteRisk < 80) return 'ch4_ending_stage3';
+    return 'ch4_ending_stage4';
+  }
+
   void _cycleChestAnimation() {
     setState(() {
       _iteration = (_iteration + 1) % _sizes.length;
@@ -104,9 +112,13 @@ class _GameScreenState extends State<GameScreen> {
                               mhDelta: c.mh.toDouble(),
                               tcDelta: c.tc.toDouble(),
                               ssDelta: c.ss.toDouble(),
+                              cteDelta: c.cr.toDouble(),
                             );
+                            final nextPageId = page.id == 'ch4_outcome_choice'
+                                ? _cteEndingFor(updatedStats.cteRisk)
+                                : c.nextId;
                             notifier.value = notifier.value.copyWith(
-                              currentPageId: c.nextId,
+                              currentPageId: nextPageId,
                               stats: updatedStats,
                             );
                           },

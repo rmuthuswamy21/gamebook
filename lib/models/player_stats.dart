@@ -51,12 +51,14 @@ class PlayerStats {
   final double mentalHealth;
   final double teamChemistry;
   final double socialStatus;
+  final double cteRisk;
 
   const PlayerStats({
     this.physicalHealth = 75,
     this.mentalHealth = 70,
     this.teamChemistry = 65,
     this.socialStatus = 60,
+    this.cteRisk = 0,
   });
 
   PlayerStats copyWith({
@@ -64,12 +66,14 @@ class PlayerStats {
     double? mentalHealth,
     double? teamChemistry,
     double? socialStatus,
+    double? cteRisk,
   }) {
     return PlayerStats(
       physicalHealth: physicalHealth ?? this.physicalHealth,
       mentalHealth: mentalHealth ?? this.mentalHealth,
       teamChemistry: teamChemistry ?? this.teamChemistry,
       socialStatus: socialStatus ?? this.socialStatus,
+      cteRisk: cteRisk ?? this.cteRisk,
     );
   }
 
@@ -110,12 +114,14 @@ class PlayerStats {
     double mhDelta = 0,
     double tcDelta = 0,
     double ssDelta = 0,
+    double cteDelta = 0,
   }) {
     return PlayerStats(
       physicalHealth: _clamp(physicalHealth + phDelta),
       mentalHealth: _clamp(mentalHealth + mhDelta),
       teamChemistry: _clamp(teamChemistry + tcDelta),
       socialStatus: _clamp(socialStatus + ssDelta),
+      cteRisk: _clamp(cteRisk + cteDelta),
     );
   }
 

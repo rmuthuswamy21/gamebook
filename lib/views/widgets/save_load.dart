@@ -9,6 +9,7 @@ const String STAT_PH_KEY = 'stat_ph';
 const String STAT_MH_KEY = 'stat_mh';
 const String STAT_TC_KEY = 'stat_tc';
 const String STAT_SS_KEY = 'stat_ss';
+const String STAT_CTE_KEY = 'stat_cte';
 
 class MessageDialog {
   final String title;
@@ -42,6 +43,7 @@ class ChoiceSave extends StatelessWidget {
     await prefs.setDouble(STAT_MH_KEY, state.stats.mentalHealth);
     await prefs.setDouble(STAT_TC_KEY, state.stats.teamChemistry);
     await prefs.setDouble(STAT_SS_KEY, state.stats.socialStatus);
+    await prefs.setDouble(STAT_CTE_KEY, state.stats.cteRisk);
   }
 
   @override
@@ -79,6 +81,7 @@ class ChoiceLoad extends StatelessWidget {
       mentalHealth: prefs.getDouble(STAT_MH_KEY) ?? defaultStats.mentalHealth,
       teamChemistry: prefs.getDouble(STAT_TC_KEY) ?? defaultStats.teamChemistry,
       socialStatus: prefs.getDouble(STAT_SS_KEY) ?? defaultStats.socialStatus,
+      cteRisk: prefs.getDouble(STAT_CTE_KEY) ?? defaultStats.cteRisk,
     );
     return SavedGameData(sceneId: id, stats: stats);
   }
