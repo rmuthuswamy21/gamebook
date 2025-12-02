@@ -274,5 +274,9 @@ GameState _initialGame() {
 
   };
 
-  return GameState(phase: phases, currentPhaseId: 'start');
+  return GameState(
+    phase: phases,
+    currentPhaseId: 'start',
+    stats: const PlayerStats(),
+  );
 }

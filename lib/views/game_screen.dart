@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../game_provider.dart';
 import '../models/data_layer.dart';
 import 'widgets/save_load.dart';
+import 'widgets/stat_tracker.dart';
 
 class GameScreen extends StatefulWidget {
   const GameScreen({super.key});
@@ -27,6 +28,7 @@ class _GameScreenState extends State<GameScreen> {
       valueListenable: notifier,
       builder: (context, game, _) {
         final page = game.currentPage;
+        final stats = game.stats;
         final isChestPage = page.id == 'pathB_B2';
 
         return Scaffold(
@@ -69,6 +71,26 @@ class _GameScreenState extends State<GameScreen> {
                         ),
                       ),
                     ),
+                  const Divider(),
+                  Padding(
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4),
+                    child: Text(
+                      'Season Progress',
+                      style: Theme.of(context)
+                          .textTheme
+                          .titleMedium
+                          ?.copyWith(fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  StatTracker(
+                    stats: stats,
+                    onDelta: (type, delta) {
+                      final updatedStats = notifier.value.stats.adjust(type, delta);
+                      notifier.value =
+                          notifier.value.copyWith(stats: updatedStats);
+                    },
+                  ),
                   const Divider(),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
