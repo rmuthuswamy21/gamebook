@@ -105,6 +105,20 @@ class PlayerStats {
     return setValue(type, current + delta);
   }
 
+  PlayerStats adjustMultiple({
+    double phDelta = 0,
+    double mhDelta = 0,
+    double tcDelta = 0,
+    double ssDelta = 0,
+  }) {
+    return PlayerStats(
+      physicalHealth: _clamp(physicalHealth + phDelta),
+      mentalHealth: _clamp(mentalHealth + mhDelta),
+      teamChemistry: _clamp(teamChemistry + tcDelta),
+      socialStatus: _clamp(socialStatus + ssDelta),
+    );
+  }
+
   static double _clamp(double value) {
     final num clamped = value.clamp(0, 100);
     return clamped.toDouble();

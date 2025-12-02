@@ -3,12 +3,10 @@ import '../../models/player_stats.dart';
 
 class StatTracker extends StatelessWidget {
   final PlayerStats stats;
-  final void Function(PlayerStatType type, double delta) onDelta;
 
   const StatTracker({
     super.key,
     required this.stats,
-    required this.onDelta,
   });
 
   @override
@@ -16,11 +14,12 @@ class StatTracker extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: PlayerStatType.values
-          .map((type) => _StatCard(
-                type: type,
-                stats: stats,
-                onDelta: onDelta,
-              ))
+          .map(
+            (type) => _StatCard(
+              type: type,
+              stats: stats,
+            ),
+          )
           .toList(),
     );
   }
@@ -29,7 +28,6 @@ class StatTracker extends StatelessWidget {
 class _StatCard extends StatelessWidget {
   final PlayerStatType type;
   final PlayerStats stats;
-  final void Function(PlayerStatType type, double delta) onDelta;
 
   static const Map<PlayerStatType, Color> _colors = {
     PlayerStatType.physicalHealth: Colors.redAccent,
@@ -41,7 +39,6 @@ class _StatCard extends StatelessWidget {
   const _StatCard({
     required this.type,
     required this.stats,
-    required this.onDelta,
   });
 
   @override
@@ -85,23 +82,7 @@ class _StatCard extends StatelessWidget {
               type.description,
               style: theme.bodySmall?.copyWith(color: Colors.black87),
             ),
-            const SizedBox(height: 8),
-            Row(
-              children: [
-                IconButton(
-                  tooltip: 'Decrease ${type.shortLabel}',
-                  onPressed:
-                      value <= 0 ? null : () => onDelta(type, -5),
-                  icon: const Icon(Icons.remove_circle_outline),
-                ),
-                IconButton(
-                  tooltip: 'Increase ${type.shortLabel}',
-                  onPressed:
-                      value >= 100 ? null : () => onDelta(type, 5),
-                  icon: const Icon(Icons.add_circle_outline),
-                ),
-              ],
-            ),
+            const SizedBox(height: 4),
           ],
         ),
       ),

@@ -83,14 +83,7 @@ class _GameScreenState extends State<GameScreen> {
                           ?.copyWith(fontWeight: FontWeight.bold),
                     ),
                   ),
-                  StatTracker(
-                    stats: stats,
-                    onDelta: (type, delta) {
-                      final updatedStats = notifier.value.stats.adjust(type, delta);
-                      notifier.value =
-                          notifier.value.copyWith(stats: updatedStats);
-                    },
-                  ),
+                  StatTracker(stats: stats),
                   const Divider(),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
@@ -113,8 +106,16 @@ class _GameScreenState extends State<GameScreen> {
                       children: [
                         IconButton(
                           onPressed: () {
+                            final updatedStats =
+                                notifier.value.stats.adjustMultiple(
+                              phDelta: c.ph.toDouble(),
+                              mhDelta: c.mh.toDouble(),
+                              tcDelta: c.tc.toDouble(),
+                              ssDelta: c.ss.toDouble(),
+                            );
                             notifier.value = notifier.value.copyWith(
                               currentPageId: c.nextId,
+                              stats: updatedStats,
                             );
                           },
                           icon: const Icon(Icons.run_circle),
