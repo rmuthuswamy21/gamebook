@@ -25,198 +25,260 @@ GameState _initialGame() {
   final phases = <String, GamePage>{
     'start': GamePage(
       id: 'start',
-      appBarTitle: 'Start Page of Gamebook',
-      imageAsset: 'assets/Island_Intro.png',
+      appBarTitle: 'Friday Night Pressure',
+      imageAsset: 'assets/ch1_start_intro.png',
       aspectRatio: 16 / 18,
-      headline: 'Welcome to LOST ON AN ISLAND:  A Survival Adventure!',
-      body: 'Click an icon to make your choice.',
+      headline: 'Welcome to FRIDAY NIGHT PRESSURE',
+      body: '',
       choices: const [
-        GameChoice(text: 'Start your quest.', nextId: 'first_choice'),
+        GameChoice(text: 'Start your season.', nextId: 'ch1_morning'),
       ],
     ),
-    'first_choice': GamePage(
-      id: 'first_choice',
-      appBarTitle: 'First Choice',
-      imageAsset: 'assets/FirstChoice.png',
+
+    'ch1_morning': GamePage(
+      id: 'ch1_morning',
+      appBarTitle: 'First Morning of Practice',
+      imageAsset: 'assets/ch1_morning_kitchen.png',
       aspectRatio: 16 / 14,
-      headline: 'You awaken on a beach…',
-      body: 'You awaken on a beach, the wreckage of your plane scattered around. '
-          'The jungle hums behind you, the ocean stretches endlessly ahead.\n\n'
-          'Click an icon to make your choice.',
+      headline: 'First Day, Last Chance',
+      body: '',
       choices: const [
-        GameChoice(text: 'Venture into the jungle.', nextId: 'pathA'),
-        GameChoice(text: 'Stay on the beach.', nextId: 'pathB'),
+        GameChoice(
+          text: 'Reassure your mom you will be careful.',
+          nextId: 'ch1_locker_room',
+        ),
+        GameChoice(
+          text: 'Brush it off and joke that you will be a warrior.',
+          nextId: 'ch1_locker_room',
+        ),
       ],
     ),
-    'pathA': GamePage(
-      id: 'pathA',
-      appBarTitle: 'Path A - Survivor First Choice',
-      imageAsset: 'assets/PathA_A0.png',
+
+    'ch1_locker_room': GamePage(
+      id: 'ch1_locker_room',
+      appBarTitle: 'Locker Room Noise',
+      imageAsset: 'assets/ch1_locker_room.png',
       aspectRatio: 16 / 14,
-      headline: 'Into the jungle',
-      body: 'You push into the dense jungle. You find fruit trees, a freshwater stream — '
-          'and strange footprints.\n\nClick an icon to make your choice.',
+      headline: 'The Locker Room',
+      body: '',
       choices: const [
-        GameChoice(text: 'Follow the footprints.', nextId: 'pathA_A1'),
-        GameChoice(text: 'Avoid them and build a shelter.', nextId: 'pathA_B1'),
+        GameChoice(
+          text: 'Back up Coach and talk loudly about not quitting.',
+          nextId: 'ch1_warmups',
+        ),
+        GameChoice(
+          text: 'Go over and ask Ms. Hall about the baseline tests.',
+          nextId: 'ch1_baseline_test',
+        ),
       ],
     ),
-    'pathA_A1': GamePage(
-      id: 'pathA_A1',
-      appBarTitle: 'Path A - The Strangers Camp',
-      imageAsset: 'assets/PathA_A1.png',
+
+    'ch1_warmups': GamePage(
+      id: 'ch1_warmups',
+      appBarTitle: 'Conditioning',
+      imageAsset: 'assets/ch1_warmups.png',
       aspectRatio: 16 / 14,
-      headline: 'You follow the footprints',
-      body: 'You discover a small camp — a survivor named Church. He has been here for weeks. '
-          'He offers food but seems… distrustful.',
+      headline: 'Proving Yourself in Warm-Ups',
+      body: '',
       choices: const [
-        GameChoice(text: 'Trust Church and share supplies.', nextId: 'pathA_A2A'),
-        GameChoice(text: 'Take his supplies and leave.', nextId: 'pathA_A2B'),
+        GameChoice(
+          text: 'Go all out to match Drew stride for stride.',
+          nextId: 'ch1_first_big_hit',
+        ),
+        GameChoice(
+          text: 'Pace yourself and focus on form and breathing.',
+          nextId: 'ch1_first_big_hit',
+        ),
       ],
     ),
-    'pathA_A2A': GamePage(
-      id: 'pathA_A2A',
-      appBarTitle: 'Path A - The Alliance',
-      imageAsset: 'assets/PathA_A2A.png',
+
+    'ch1_first_big_hit': GamePage(
+      id: 'ch1_first_big_hit',
+      appBarTitle: 'First Big Hit',
+      imageAsset: 'assets/ch1_first_big_hit.png',
       aspectRatio: 16 / 14,
-      headline: 'Teamwork makes the dream work',
-      body: 'Together, you build a raft and escape the island safely.\n\n'
-          'THE END.',
+      headline: 'First Tackling Drill, First Big Hit',
+      body: '',
       choices: const [
-        GameChoice(text: 'Play again for new ending', nextId: 'start'),
+        GameChoice(
+          text: 'Shake it off and jog back into the drill.',
+          nextId: 'ch1_tough_or_stupid',
+        ),
+        GameChoice(
+          text: 'Step out of line and walk toward Ms. Hall.',
+          nextId: 'ch1_baseline_test',
+        ),
       ],
     ),
-    'pathA_A2B': GamePage(
-      id: 'pathA_A2B',
-      appBarTitle: 'Path A - The Betrayal',
-      imageAsset: 'assets/PathA_A2B.png',
+
+    'ch1_tough_or_stupid': GamePage(
+      id: 'ch1_tough_or_stupid',
+      appBarTitle: 'Playing Through It',
+      imageAsset: 'assets/ch1_tough_or_stupid.png',
       aspectRatio: 16 / 14,
-      headline: 'You betray Church',
-      body: 'You steal his supplies and leave him behind. Alone, you struggle to survive. '
-          'Days later, you succumb to the island\'s dangers.\n\n'
-          'THE END.',
+      headline: 'Tough or Just Reckless?',
+      body: '',
       choices: const [
-        GameChoice(text: 'Play again for new ending', nextId: 'start'),
-      ],  
-    ),
-    'pathA_B1': GamePage(
-      id: 'pathA_B1',
-      appBarTitle: 'Path A - The Shelter',
-      imageAsset: 'assets/PathA_B1.png',
-      aspectRatio: 16 / 14,
-      headline: 'You build a shelter',
-      body: 'You avoid the footprints and build a shelter. Days pass, and you grow weak. '
-          'One night, a resucue plane flies overhead, but a jaguar is stalking your camp.\n\n'
-          'Click an icon to make your choice.',
-      choices: const [
-        GameChoice(text: 'Shoot your flare at the plane', nextId: 'pathA_B2A'),
-        GameChoice(text: 'Shoot your flare at the jaguar', nextId: 'pathA_B2B'),
+        GameChoice(
+          text: 'Keep crashing into Malik to prove you are not scared.',
+          nextId: 'ch1_coach_approval',
+        ),
+        GameChoice(
+          text: 'Quietly adjust your technique to avoid helmet to helmet.',
+          nextId: 'ch1_coach_approval',
+        ),
       ],
     ),
-    'pathA_B2A': GamePage(
-      id: 'pathA_B2A',
-      appBarTitle: 'Path A - The Rescue',
-      imageAsset: 'assets/PathA_B2A.png',
+
+    'ch1_baseline_test': GamePage(
+      id: 'ch1_baseline_test',
+      appBarTitle: 'Trainer’s Office',
+      imageAsset: 'assets/ch1_baseline_test.png',
       aspectRatio: 16 / 14,
-      headline: 'You signal the plane',
-      body: 'Your flare lights up the sky. Scares away the jaguar. '
-        'The plane sees you and rescues you from the island.\n\n'
-        'THE END.',
+      headline: 'Baseline Testing',
+      body: '',
       choices: const [
-        GameChoice(text: 'Play again for new ending', nextId: 'start'),
+        GameChoice(
+          text: 'Answer honestly, even about dizziness.',
+          nextId: 'ch1_coach_approval',
+        ),
+        GameChoice(
+          text: 'Downplay symptoms and rush through the test.',
+          nextId: 'ch1_coach_approval',
+        ),
       ],
     ),
-    'pathA_B2B': GamePage(
-      id: 'pathA_B2B',
-      appBarTitle: 'Path A - The Attack',
-      imageAsset: 'assets/PathA_B2B.png',
+
+    'ch1_coach_approval': GamePage(
+      id: 'ch1_coach_approval',
+      appBarTitle: 'Coach’s Praise',
+      imageAsset: 'assets/ch1_coach_approval.png',
       aspectRatio: 16 / 14,
-      headline: 'You fend off the jaguar',
-      body: 'You slay the jaguar and love the rush of victory. You venture deeper into the jungle, '
-        'You become an apex predator of the island. It is your new home now.\n\n'
-        'THE END.',
+      headline: 'Coach’s Approval',
+      body: '',
       choices: const [
-        GameChoice(text: 'Play again for new ending', nextId: 'start'),
+        GameChoice(
+          text: 'Enjoy the praise and ignore Ms. Hall’s concern.',
+          nextId: 'ch1_locker_aftermath',
+        ),
+        GameChoice(
+          text: 'Tell Coach you want to talk more with Ms. Hall later.',
+          nextId: 'ch1_locker_aftermath',
+        ),
       ],
     ),
-    'pathB': GamePage(
-      id: 'pathB',
-      appBarTitle: 'Path B - Hopeful First Choice',
-      imageAsset: 'assets/PathB_B0.png',
+
+    'ch1_locker_aftermath': GamePage(
+      id: 'ch1_locker_aftermath',
+      appBarTitle: 'After Practice',
+      imageAsset: 'assets/ch1_locker_aftermath.png',
       aspectRatio: 16 / 14,
-      headline: 'Hold the beach',
-      body: 'You stay on the beach and collect debris from the wreckage. '
-          'The sun burns hot, and your water runs low.\n\n'
-          'Click an icon to make your choice.',
+      headline: 'Locker Room Aftermath',
+      body: '',
       choices: const [
-        GameChoice(text: 'Build a signal fire', nextId: 'pathB_A1'),
-        GameChoice(text: 'Search the coastline for supplies', nextId: 'pathB_B1'),
+        GameChoice(
+          text: 'Laugh it off and repost the clip.',
+          nextId: 'ch1_family_dinner',
+        ),
+        GameChoice(
+          text: 'Feel uneasy and keep your phone in your locker.',
+          nextId: 'ch1_family_dinner',
+        ),
       ],
     ),
-    'pathB_A1': GamePage(
-      id: 'pathB_A1',
-      appBarTitle: 'Path B - The Signal Fire',
-      imageAsset: 'assets/PathB_A1.png',
+
+    'ch1_family_dinner': GamePage(
+      id: 'ch1_family_dinner',
+      appBarTitle: 'Family Dinner',
+      imageAsset: 'assets/ch1_family_dinner.png',
       aspectRatio: 16 / 14,
-      headline: 'You build a signal fire',
-      body: 'You manage to light a fire with flares. Hours later, smoke on the horizon — a ship! '
-          'But the storm clouds roll in fast.\n\n'
-          'Click an icon to make your choice.',
+      headline: 'At the Dinner Table',
+      body: '',
       choices: const [
-        GameChoice(text: 'Swim out to ship', nextId: 'pathB_A2A'),
-        GameChoice(text: 'Wait for the storm to pass', nextId: 'pathB_A2B'),
+        GameChoice(
+          text: 'Side with your dad and say it is just part of the game.',
+          nextId: 'ch1_school_work',
+        ),
+        GameChoice(
+          text: 'Admit to your mom that you did feel dizzy for a moment.',
+          nextId: 'ch1_school_work',
+        ),
       ],
     ),
-    'pathB_A2A': GamePage(
-      id: 'pathB_A2A',
-      appBarTitle: 'Path B - Swim to the Ship',
-      imageAsset: 'assets/PathB_A2A.png',
+
+    'ch1_school_work': GamePage(
+      id: 'ch1_school_work',
+      appBarTitle: 'In Class',
+      imageAsset: 'assets/ch1_school_work.png',
       aspectRatio: 16 / 14,
-      headline: 'You swim out to the ship',
-      body: 'The crew rescues you — you live to tell the tale!\n\n'
-          'THE END.',
+      headline: 'School-Work Balance',
+      body: '',
       choices: const [
-        GameChoice(text: 'Play again for new ending', nextId: 'start'),
+        GameChoice(
+          text: 'Promise to come in for extra help after practice.',
+          nextId: 'ch1_first_party',
+        ),
+        GameChoice(
+          text: 'Shrug it off and say you will be fine.',
+          nextId: 'ch1_first_party',
+        ),
       ],
     ),
-    'pathB_A2B': GamePage(
-      id: 'pathB_A2B',
-      appBarTitle: 'Path B - The Storm',
-      imageAsset: 'assets/PathB_A2B.png',
+
+    'ch1_first_party': GamePage(
+      id: 'ch1_first_party',
+      appBarTitle: 'Party Invite',
+      imageAsset: 'assets/ch1_first_party_invite.png',
       aspectRatio: 16 / 14,
-      headline: 'You wait for the storm to pass',
-      body: 'The storm rages through the night. You survive'
-          'The fire dies, and the ship disappears and you are stuck forever.\n\n'
-          'THE END.',
+      headline: 'First Party Invite',
+      body: '',
       choices: const [
-        GameChoice(text: 'Play again for new ending', nextId: 'start'),
+        GameChoice(
+          text: 'Say you are definitely going to the party.',
+          nextId: 'ch1_subtle_symptoms',
+        ),
+        GameChoice(
+          text: 'Say you might skip to rest up.',
+          nextId: 'ch1_subtle_symptoms',
+        ),
       ],
     ),
-    'pathB_B1': GamePage(
-      id: 'pathB_B1',
-      appBarTitle: 'Path B - The Search',
-      imageAsset: 'assets/PathB_B1.png',
+
+    'ch1_subtle_symptoms': GamePage(
+      id: 'ch1_subtle_symptoms',
+      appBarTitle: 'Subtle Symptoms',
+      imageAsset: 'assets/ch1_subtle_symptoms.png',
       aspectRatio: 16 / 14,
-      headline: 'You search the coastline',
-    body: 'You find an old cave with carvings — signs of previous castaways. '
-          'Inside, there is a locked chest and strange symbols.\n\n'
-          'Click an icon to make your choice.',
+      headline: 'Headaches and Blurry Numbers',
+      body: '',
       choices: const [
-        GameChoice(text: 'Leave it alone, and go back and try signal flare', nextId: 'pathB_A1'),
-        GameChoice(text: 'Open the chest', nextId: 'pathB_B2'),
+        GameChoice(
+          text: 'Ignore the symptoms and focus on the scrimmage.',
+          nextId: 'ch1_first_scrimmage',
+        ),
+        GameChoice(
+          text: 'Decide to talk to Ms. Hall again after school.',
+          nextId: 'ch1_first_scrimmage',
+        ),
       ],
     ),
-    'pathB_B2': GamePage(
-      id: 'pathB_B2',
-      appBarTitle: 'Path B - The Chest',
-      imageAsset: 'assets/PathB_B2.png',
+
+    'ch1_first_scrimmage': GamePage(
+      id: 'ch1_first_scrimmage',
+      appBarTitle: 'First Scrimmage',
+      imageAsset: 'assets/ch1_first_scrimmage.png',
       aspectRatio: 16 / 14,
-      headline: 'You open the chest',
-      body: 'Inside the chest, you a gem with immaculate beauty, '
-          'It consumes you, survival means nothing without it. You stay with YOUR gem. Forever.!\n\n'
-          'THE END.',
+      headline: 'First Real Test',
+      body: '',
       choices: const [
-        GameChoice(text: 'Play again for new ending', nextId: 'start'),
+        GameChoice(
+          text: 'Lower your head and fight for every yard.',
+          nextId: 'ch2_rival_hit',
+        ),
+        GameChoice(
+          text: 'Cut outside and take the safer angle.',
+          nextId: 'ch2_rival_hit',
+        ),
       ],
     ),
   };
