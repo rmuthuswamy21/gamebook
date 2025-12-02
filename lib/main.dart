@@ -23,10 +23,31 @@ class LostOnAnIslandApp extends StatelessWidget {
 
 GameState _initialGame() {
   final phases = <String, GamePage>{
-    // CHAPTER 1 – PRESEASON & FIRST IMPRESSIONS
 
     'start': GamePage(
       id: 'start',
+      appBarTitle: 'Chapter 1 – Preseason',
+      imageAsset: 'assets/ch1_intro.png',
+      aspectRatio: 16 / 18,
+      headline: 'Chapter 1: Preseason & First Impressions',
+      body: '',
+      choices: const [
+        GameChoice(
+          text: 'Begin Chapter 1',
+          nextId: 'ch1_p1_first_day',
+          ph: 0,
+          mh: 0,
+          tc: 0,
+          ss: 0,
+          cr: 0,
+        ),
+      ],
+    ),
+
+    // CHAPTER 1 – PRESEASON & FIRST IMPRESSIONS
+
+    'ch1_p1_first_day': GamePage(
+      id: 'ch1_p1_first_day',
       appBarTitle: 'Chapter 1 – Page 1',
       imageAsset: 'assets/CH01_01.png',
       aspectRatio: 16 / 18,
@@ -383,7 +404,7 @@ GameState _initialGame() {
       choices: const [
         GameChoice(
           text: 'Lower your head and charge through full speed.',
-          nextId: 'ch2_p14_big_hit',
+          nextId: 'ch2_intro',
           ph: -10,
           mh: -5,
           tc: 10,
@@ -392,7 +413,7 @@ GameState _initialGame() {
         ),
         GameChoice(
           text: 'Cut outside, taking a safer angle but less yardage.',
-          nextId: 'ch2_p14_big_hit',
+          nextId: 'ch2_intro',
           ph: -2,
           mh: 2,
           tc: -5,
@@ -401,10 +422,27 @@ GameState _initialGame() {
         ),
       ],
     ),
-    // ============
-    // CHAPTER 2 – MIDSEASON PRESSURE
-    // ============
 
+    // CHAPTER 2 INTRO
+    'ch2_intro': GamePage(
+      id: 'ch2_intro',
+      appBarTitle: 'Chapter 2 – Midseason Pressure',
+      imageAsset: 'assets/ch2_intro.png',
+      aspectRatio: 16 / 18,
+      headline: 'Chapter 2: Midseason Pressure',
+      body: '',
+      choices: const [
+        GameChoice(
+          text: 'Begin Chapter 2',
+          nextId: 'ch2_p14_big_hit', 
+          ph: 0,
+          mh: 0,
+          tc: 0,
+          ss: 0,
+          cr: 0,
+        ),
+      ],
+    ),
     // Page 14 – The Hit That Matters
     'ch2_p14_big_hit': GamePage(
       id: 'ch2_p14_big_hit',
