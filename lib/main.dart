@@ -401,6 +401,369 @@ GameState _initialGame() {
         ),
       ],
     ),
+    // ============
+    // CHAPTER 2 – MIDSEASON PRESSURE
+    // ============
+
+    // Page 14 – The Hit That Matters
+    'ch2_p14_big_hit': GamePage(
+      id: 'ch2_p14_big_hit',
+      appBarTitle: 'Chapter 2 – Page 14',
+      imageAsset: 'assets/ch2_p14_big_hit.png',
+      aspectRatio: 16 / 14,
+      headline: 'The Hit That Matters',
+      body: '',
+      choices: const [
+        GameChoice(
+          text: 'Pop up fast and stay in the game.',
+          nextId: 'ch2_p15_morning_after',
+          ph: -15,
+          mh: -10,
+          tc: 15,
+          ss: 10,
+          cr: 15,
+        ),
+        GameChoice(
+          text: 'Stay down and ask to be checked.',
+          nextId: 'ch2_p15_morning_after',
+          ph: 10,
+          mh: 5,
+          tc: -10,
+          ss: -10,
+          cr: 0,
+        ),
+      ],
+    ),
+
+    // Page 15 – Morning After
+    'ch2_p15_morning_after': GamePage(
+      id: 'ch2_p15_morning_after',
+      appBarTitle: 'Chapter 2 – Page 15',
+      imageAsset: 'assets/ch2_p15_morning_after.png',
+      aspectRatio: 16 / 14,
+      headline: 'Morning After',
+      body: '',
+      choices: const [
+        GameChoice(
+          text: 'Admit the headache is bad and ask to see a doctor.',
+          nextId: 'ch2_p16_film_room',
+          ph: 15,
+          mh: 10,
+          tc: -10,
+          ss: -5,
+          cr: -10,
+        ),
+        GameChoice(
+          text: 'Say you’re fine and watch film with the team.',
+          nextId: 'ch2_p16_film_room',
+          ph: -5,
+          mh: -5,
+          tc: 10,
+          ss: 5,
+          cr: 10,
+        ),
+      ],
+    ),
+
+    // Page 16 – Film Room
+    'ch2_p16_film_room': GamePage(
+      id: 'ch2_p16_film_room',
+      appBarTitle: 'Chapter 2 – Page 16',
+      imageAsset: 'assets/ch2_p16_film_room.png',
+      aspectRatio: 16 / 14,
+      headline: 'Film Room',
+      body: '',
+      choices: const [
+        GameChoice(
+          text: 'Soak in the praise and ignore the pain.',
+          nextId: 'ch2_p17_risky_drills',
+          ph: -2,
+          mh: -5,
+          tc: 5,
+          ss: 5,
+          cr: 5,
+        ),
+        GameChoice(
+          text: 'Sit in the back and dim your screen.',
+          nextId: 'ch2_p17_risky_drills',
+          ph: 2,
+          mh: 5,
+          tc: -3,
+          ss: -3,
+          cr: -2,
+        ),
+      ],
+    ),
+
+    // Page 17 – Risky Drills
+    'ch2_p17_risky_drills': GamePage(
+      id: 'ch2_p17_risky_drills',
+      appBarTitle: 'Chapter 2 – Page 17',
+      imageAsset: 'assets/ch2_p17_risky_drills.png',
+      aspectRatio: 16 / 14,
+      headline: 'High-Risk Drills',
+      body: '',
+      choices: const [
+        GameChoice(
+          text: 'Go full speed and deliver big hits.',
+          nextId: 'ch2_p18_guidance',
+          ph: -10,
+          mh: -5,
+          tc: 10,
+          ss: 5,
+          cr: 10,
+        ),
+        GameChoice(
+          text: 'Use perfect technique to minimize head contact.',
+          nextId: 'ch2_p18_guidance',
+          ph: -3,
+          mh: 2,
+          tc: -2,
+          ss: 0,
+          cr: -5,
+        ),
+      ],
+    ),
+
+    // Page 18 – Guidance Counselor
+    'ch2_p18_guidance': GamePage(
+      id: 'ch2_p18_guidance',
+      appBarTitle: 'Chapter 2 – Page 18',
+      imageAsset: 'assets/ch2_p18_guidance.png',
+      aspectRatio: 16 / 14,
+      headline: 'Guidance Counselor Check-In',
+      body: '',
+      choices: const [
+        GameChoice(
+          text: 'Open up about headaches and focus issues.',
+          nextId: 'ch2_p19_lunch_tension',
+          ph: 5,
+          mh: 15,
+          tc: -5,
+          ss: -2,
+          cr: -5,
+        ),
+        GameChoice(
+          text: 'Downplay everything as football stress.',
+          nextId: 'ch2_p19_lunch_tension',
+          ph: 0,
+          mh: -5,
+          tc: 2,
+          ss: 2,
+          cr: 5,
+        ),
+      ],
+    ),
+
+    // Page 19 – Lunch Tension
+    'ch2_p19_lunch_tension': GamePage(
+      id: 'ch2_p19_lunch_tension',
+      appBarTitle: 'Chapter 2 – Page 19',
+      imageAsset: 'assets/ch2_p19_lunch_tension.png',
+      aspectRatio: 16 / 14,
+      headline: 'Lunch Table Tension',
+      body: '',
+      choices: const [
+        GameChoice(
+          text: 'Defend football and side with Drew.',
+          nextId: 'ch2_p20_sleepless',
+          ph: 0,
+          mh: -5,
+          tc: 5,
+          ss: 5,
+          cr: 3,
+        ),
+        GameChoice(
+          text: 'Acknowledge your concerns with Jay.',
+          nextId: 'ch2_p20_sleepless',
+          ph: 0,
+          mh: 5,
+          tc: -5,
+          ss: -2,
+          cr: -2,
+        ),
+      ],
+    ),
+
+    // Page 20 – Sleepless Night
+    'ch2_p20_sleepless': GamePage(
+      id: 'ch2_p20_sleepless',
+      appBarTitle: 'Chapter 2 – Page 20',
+      imageAsset: 'assets/ch2_p20_sleepless.png',
+      aspectRatio: 16 / 14,
+      headline: 'Sleepless Night',
+      body: '',
+      choices: const [
+        GameChoice(
+          text: 'Scroll highlight clips to distract yourself.',
+          nextId: 'ch2_p21_game2',
+          ph: -5,
+          mh: -5,
+          tc: 0,
+          ss: 2,
+          cr: 2,
+        ),
+        GameChoice(
+          text: 'Put the phone away and breathe.',
+          nextId: 'ch2_p21_game2',
+          ph: 5,
+          mh: 10,
+          tc: 0,
+          ss: -1,
+          cr: 0,
+        ),
+      ],
+    ),
+
+    // Page 21 – Game 2 Decision
+    'ch2_p21_game2': GamePage(
+      id: 'ch2_p21_game2',
+      appBarTitle: 'Chapter 2 – Page 21',
+      imageAsset: 'assets/ch2_p21_game2.png',
+      aspectRatio: 16 / 14,
+      headline: 'Game Two Decision',
+      body: '',
+      choices: const [
+        GameChoice(
+          text: 'Drop your head and fight for yards.',
+          nextId: 'ch2_p22_bus',
+          ph: -15,
+          mh: -5,
+          tc: 10,
+          ss: 5,
+          cr: 15,
+        ),
+        GameChoice(
+          text: 'Step out of bounds to avoid the hit.',
+          nextId: 'ch2_p22_bus',
+          ph: 0,
+          mh: 5,
+          tc: -10,
+          ss: -5,
+          cr: -5,
+        ),
+      ],
+    ),
+
+    // Page 22 – Bus Ride
+    'ch2_p22_bus': GamePage(
+      id: 'ch2_p22_bus',
+      appBarTitle: 'Chapter 2 – Page 22',
+      imageAsset: 'assets/ch2_p22_bus.png',
+      aspectRatio: 16 / 14,
+      headline: 'Bus Ride Home',
+      body: '',
+      choices: const [
+        GameChoice(
+          text: 'Laugh and go along with “whatever wins.”',
+          nextId: 'ch2_p23_confrontation',
+          ph: 0,
+          mh: -5,
+          tc: 5,
+          ss: 5,
+          cr: 3,
+        ),
+        GameChoice(
+          text: 'Push back that winning is not worth your brain.',
+          nextId: 'ch2_p23_confrontation',
+          ph: 0,
+          mh: 5,
+          tc: -5,
+          ss: -3,
+          cr: -2,
+        ),
+      ],
+    ),
+
+    // Page 23 – Confrontation
+    'ch2_p23_confrontation': GamePage(
+      id: 'ch2_p23_confrontation',
+      appBarTitle: 'Chapter 2 – Page 23',
+      imageAsset: 'assets/ch2_p23_confrontation.png',
+      aspectRatio: 16 / 14,
+      headline: 'Someone Who Cares',
+      body: '',
+      choices: const [
+        GameChoice(
+          text: 'Admit everything—headaches and fear.',
+          nextId: 'ch2_p24_trainer',
+          ph: 5,
+          mh: 15,
+          tc: -5,
+          ss: 5,
+          cr: -5,
+        ),
+        GameChoice(
+          text: 'Get defensive and deny there is a problem.',
+          nextId: 'ch2_p24_trainer',
+          ph: 0,
+          mh: -10,
+          tc: 0,
+          ss: -5,
+          cr: 5,
+        ),
+      ],
+    ),
+
+    // Page 24 – Trainer Follow-Up
+    'ch2_p24_trainer': GamePage(
+      id: 'ch2_p24_trainer',
+      appBarTitle: 'Chapter 2 – Page 24',
+      imageAsset: 'assets/ch2_p24_trainer.png',
+      aspectRatio: 16 / 14,
+      headline: 'Trainer Follow-Up',
+      body: '',
+      choices: const [
+        GameChoice(
+          text: 'Tell her the full list of symptoms.',
+          nextId: 'ch2_p25_scout_rumor',
+          ph: 15,
+          mh: 10,
+          tc: -10,
+          ss: -5,
+          cr: -10,
+        ),
+        GameChoice(
+          text: 'Say it is just minor stuff.',
+          nextId: 'ch2_p25_scout_rumor',
+          ph: -5,
+          mh: -5,
+          tc: 10,
+          ss: 5,
+          cr: 10,
+        ),
+      ],
+    ),
+
+    // Page 25 – Scout Rumor (End of Chapter 2)
+    'ch2_p25_scout_rumor': GamePage(
+      id: 'ch2_p25_scout_rumor',
+      appBarTitle: 'Chapter 2 – Page 25',
+      imageAsset: 'assets/ch2_p25_scout.png',
+      aspectRatio: 16 / 14,
+      headline: 'College Scout Rumor',
+      body: '',
+      choices: const [
+        GameChoice(
+          text: 'Decide you will do whatever it takes to impress.',
+          nextId: 'ch3_p27_pre_playoff',
+          ph: -5,
+          mh: -5,
+          tc: 10,
+          ss: 10,
+          cr: 10,
+        ),
+        GameChoice(
+          text: 'Decide you will play smart for your future.',
+          nextId: 'ch3_p27_pre_playoff',
+          ph: 5,
+          mh: 10,
+          tc: -5,
+          ss: -5,
+          cr: -5,
+        ),
+      ],
+    ),
   };
 
   return GameState(
