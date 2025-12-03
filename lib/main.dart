@@ -67,7 +67,7 @@ GameState _initialGame() {
     'ch1_p1_first_day': GamePage(
       id: 'ch1_p1_first_day',
       appBarTitle: 'Chapter 1 – Page 1',
-      imageAsset: 'assets/CH01_01.png',
+      imageAsset: 'assets/ch1_p1_first_day.png',
       aspectRatio: 16 / 18,
       headline: 'First Day, Last Chance',
       body: '',
@@ -1120,16 +1120,13 @@ GameState _initialGame() {
       ],
     ),
 
-    // ===========================
     // CHAPTER 4 – CONSEQUENCES & ENDINGS
-    // ===========================
-
     'ch4_intro': GamePage(
       id: 'ch4_intro',
       appBarTitle: 'Chapter 4 – Consequences & Endings',
-      imageAsset: 'assets/ch4_intro.png',
+      imageAsset: 'assets/ch1_intro.png',
       aspectRatio: 16 / 18,
-      headline: 'Chapter 4: Consequences & Endings',
+      headline: 'Chapter 4: Preseason & First Impressions',
       body: '',
       choices: const [
         GameChoice(
@@ -1144,7 +1141,6 @@ GameState _initialGame() {
       ],
     ),
 
-    // Page 37 – Scholarship Meeting
     'ch4_p37_intro': GamePage(
       id: 'ch4_p37_intro',
       appBarTitle: 'Chapter 4 – Page 37',
@@ -1155,7 +1151,7 @@ GameState _initialGame() {
       choices: const [
         GameChoice(
           text: 'Accept the offer and promise to prioritize health.',
-          nextId: 'ch4_p38_neuro_followup',
+          nextId: 'ch4_p42_college_future',
           ph: 10,
           mh: 10,
           tc: 0,
@@ -1164,7 +1160,7 @@ GameState _initialGame() {
         ),
         GameChoice(
           text: 'Turn down the offer and choose a future away from high-contact football.',
-          nextId: 'ch4_p39_empty_locker',
+          nextId: 'ch4_p43_youth_coach',
           ph: 20,
           mh: -5,
           tc: -10,
@@ -1174,7 +1170,6 @@ GameState _initialGame() {
       ],
     ),
 
-    // Page 38 – Neurologist Follow-Up
     'ch4_p38_neuro_followup': GamePage(
       id: 'ch4_p38_neuro_followup',
       appBarTitle: 'Chapter 4 – Page 38',
@@ -1185,7 +1180,7 @@ GameState _initialGame() {
       choices: const [
         GameChoice(
           text: 'Decide to fully retire from contact football immediately.',
-          nextId: 'ch4_p39_empty_locker',
+          nextId: 'ch4_p43_youth_coach',
           ph: 30,
           mh: 20,
           tc: -10,
@@ -1194,7 +1189,7 @@ GameState _initialGame() {
         ),
         GameChoice(
           text: 'Decide to play one more season, against medical advice.',
-          nextId: 'ch4_p39_empty_locker',
+          nextId: 'ch4_p44_cte_struggles',
           ph: -10,
           mh: -10,
           tc: 5,
@@ -1203,8 +1198,6 @@ GameState _initialGame() {
         ),
       ],
     ),
-
-    // Page 39 – Empty Locker Room Reflection
     'ch4_p39_empty_locker': GamePage(
       id: 'ch4_p39_empty_locker',
       appBarTitle: 'Chapter 4 – Page 39',
@@ -1215,26 +1208,25 @@ GameState _initialGame() {
       choices: const [
         GameChoice(
           text: 'Leave the helmet in the locker and walk out without it.',
-          nextId: 'ch4_p40_parent_talk', // ➜ Talk with parents
-          ph: 0,
+          nextId: 'ch4_p43_youth_coach',
+          ph: 10,
           mh: 10,
-          tc: 0,
-          ss: 0,
-          cr: 0,
+          tc: -10,
+          ss: -5,
+          cr: -10,
         ),
         GameChoice(
           text: 'Put it on one last time, feeling its weight.',
-          nextId: 'ch4_p40_parent_talk', // ➜ Same conversation, different mindset
+          nextId: 'ch4_p44_cte_struggles',
           ph: 0,
-          mh: 5,
+          mh: -5,
           tc: 0,
           ss: 0,
-          cr: 0,
+          cr: 5,
         ),
       ],
     ),
 
-    // Page 40 – Parent Conversation About Quitting
     'ch4_p40_parent_talk': GamePage(
       id: 'ch4_p40_parent_talk',
       appBarTitle: 'Chapter 4 – Page 40',
@@ -1245,26 +1237,25 @@ GameState _initialGame() {
       choices: const [
         GameChoice(
           text: 'Tell them you’re stepping away from playing to protect your future.',
-          nextId: 'ch4_p41_team_meeting', // ➜ Then culture meeting
+          nextId: 'ch4_p43_youth_coach',
           ph: 20,
           mh: 15,
-          tc: -15,
+          tc: -5,
           ss: -5,
           cr: -10,
         ),
         GameChoice(
           text: 'Tell them you’re going to keep playing and chase the dream.',
-          nextId: 'ch4_p41_team_meeting', // ➜ Same, different stats
+          nextId: 'ch4_p44_cte_struggles',
           ph: -10,
           mh: -10,
-          tc: 10,
+          tc: 5,
           ss: 5,
           cr: 15,
         ),
       ],
     ),
 
-    // Page 41 – Team Culture Meeting
     'ch4_p41_team_meeting': GamePage(
       id: 'ch4_p41_team_meeting',
       appBarTitle: 'Chapter 4 – Page 41',
@@ -1275,7 +1266,7 @@ GameState _initialGame() {
       choices: const [
         GameChoice(
           text: 'Speak up in favor of better safety and honest reporting.',
-          nextId: 'ch4_outcome_choice', // ➜ Outcome funnel
+          nextId: 'ch4_p45_school_assembly',
           ph: 5,
           mh: 10,
           tc: -5,
@@ -1284,7 +1275,7 @@ GameState _initialGame() {
         ),
         GameChoice(
           text: 'Echo the old-school “toughness above all” mindset.',
-          nextId: 'ch4_outcome_choice', // ➜ Outcome funnel
+          nextId: 'ch4_p47_ending_star_damaged',
           ph: -5,
           mh: -5,
           tc: 10,
@@ -1293,141 +1284,84 @@ GameState _initialGame() {
         ),
       ],
     ),
-
-    // ===========================
-    // CTE-BASED OUTCOME FUNNEL
-    // ===========================
-
-    'ch4_outcome_choice': GamePage(
-      id: 'ch4_outcome_choice',
-      appBarTitle: 'Chapter 4 – Outcome',
-      imageAsset: 'assets/ch4_outcome.png',
-      aspectRatio: 16 / 18,
-      headline: 'See Where Football Has Taken You',
-      body: '',
-      choices: const [
-        GameChoice(
-          text: 'See your future.',
-          // placeholder; code will override based on CR
-          nextId: 'ch4_ending_none',
-          ph: 0,
-          mh: 0,
-          tc: 0,
-          ss: 0,
-          cr: 0,
-        ),
-      ],
-    ),
-
-    // ===========================
-    // 5 CTE-BASED ENDINGS
-    // ===========================
-
-    // No CTE – healthy outcome (cr < 20)
-    'ch4_ending_none': GamePage(
-      id: 'ch4_ending_none',
-      appBarTitle: 'Ending – No CTE',
-      imageAsset: 'assets/ch4_ending_none.png',
+    'ch4_p42_college_future': GamePage(
+      id: 'ch4_p42_college_future',
+      appBarTitle: 'Chapter 4 – Page 42',
+      imageAsset: 'assets/ch4_p42_college_future.png',
       aspectRatio: 16 / 14,
-      headline: 'Ending: Healthy Mind, New Path',
+      headline: 'Future: College Campus (Healthier Path)',
       body: '',
-      choices: const [
-        GameChoice(
-          text: 'Restart the story.',
-          nextId: 'ch1_intro',
-          ph: 0,
-          mh: 0,
-          tc: 0,
-          ss: 0,
-          cr: 0,
-        ),
-      ],
+      choices: const [],
     ),
-
-    // Stage 1 CTE (20 ≤ cr < 40)
-    'ch4_ending_stage1': GamePage(
-      id: 'ch4_ending_stage1',
-      appBarTitle: 'Ending – CTE Stage 1',
-      imageAsset: 'assets/ch4_ending_stage1.png',
+    'ch4_p43_youth_coach': GamePage(
+      id: 'ch4_p43_youth_coach',
+      appBarTitle: 'Chapter 4 – Page 43',
+      imageAsset: 'assets/ch4_p43_youth_coach.png',
       aspectRatio: 16 / 14,
-      headline: 'Ending: Early Warning Signs',
+      headline: 'Future: Coaching Youth Team',
       body: '',
-      choices: const [
-        GameChoice(
-          text: 'Restart the story.',
-          nextId: 'ch1_intro',
-          ph: 0,
-          mh: 0,
-          tc: 0,
-          ss: 0,
-          cr: 0,
-        ),
-      ],
+      choices: const [],
     ),
 
-    // Stage 2 CTE (40 ≤ cr < 60)
-    'ch4_ending_stage2': GamePage(
-      id: 'ch4_ending_stage2',
-      appBarTitle: 'Ending – CTE Stage 2',
-      imageAsset: 'assets/ch4_ending_stage2.png',
+    'ch4_p44_cte_struggles': GamePage(
+      id: 'ch4_p44_cte_struggles',
+      appBarTitle: 'Chapter 4 – Page 44',
+      imageAsset: 'assets/ch4_p44_cte_struggles.png',
       aspectRatio: 16 / 14,
-      headline: 'Ending: Living With the Damage',
+      headline: 'Future: Struggling with Symptoms',
       body: '',
-      choices: const [
-        GameChoice(
-          text: 'Restart the story.',
-          nextId: 'ch1_intro',
-          ph: 0,
-          mh: 0,
-          tc: 0,
-          ss: 0,
-          cr: 0,
-        ),
-      ],
+      choices: const [],
     ),
 
-    // Stage 3 CTE (60 ≤ cr < 80)
-    'ch4_ending_stage3': GamePage(
-      id: 'ch4_ending_stage3',
-      appBarTitle: 'Ending – CTE Stage 3',
-      imageAsset: 'assets/ch4_ending_stage3.png',
+    'ch4_p45_school_assembly': GamePage(
+      id: 'ch4_p45_school_assembly',
+      appBarTitle: 'Chapter 4 – Page 45',
+      imageAsset: 'assets/ch4_p45_school_assembly.png',
       aspectRatio: 16 / 14,
-      headline: 'Ending: Life Rewritten by CTE',
+      headline: 'Speaking at School Assembly',
       body: '',
-      choices: const [
-        GameChoice(
-          text: 'Restart the story.',
-          nextId: 'ch1_intro',
-          ph: 0,
-          mh: 0,
-          tc: 0,
-          ss: 0,
-          cr: 0,
-        ),
-      ],
+      choices: const [],
     ),
 
-    // Stage 4 CTE (cr ≥ 80)
-    'ch4_ending_stage4': GamePage(
-      id: 'ch4_ending_stage4',
-      appBarTitle: 'Ending – CTE Stage 4',
-      imageAsset: 'assets/ch4_ending_stage4.png',
+    'ch4_p46_ending_healthy_balance': GamePage(
+      id: 'ch4_p46_ending_healthy_balance',
+      appBarTitle: 'Chapter 4 – Page 46',
+      imageAsset: 'assets/ch4_p46_ending_healthy_balance.png',
       aspectRatio: 16 / 14,
-      headline: 'Ending: The Highest Cost',
+      headline: 'Ending Path: Healthy Balance',
       body: '',
-      choices: const [
-        GameChoice(
-          text: 'Restart the story.',
-          nextId: 'ch1_intro',
-          ph: 0,
-          mh: 0,
-          tc: 0,
-          ss: 0,
-          cr: 0,
-        ),
-      ],
+      choices: const [],
     ),
 
+    'ch4_p47_ending_star_damaged': GamePage(
+      id: 'ch4_p47_ending_star_damaged',
+      appBarTitle: 'Chapter 4 – Page 47',
+      imageAsset: 'assets/ch4_p47_ending_star_damaged.png',
+      aspectRatio: 16 / 14,
+      headline: 'Ending Path: Star but Damaged',
+      body: '',
+      choices: const [],
+    ),
+
+    'ch4_p48_ending_burnout_isolation': GamePage(
+      id: 'ch4_p48_ending_burnout_isolation',
+      appBarTitle: 'Chapter 4 – Page 48',
+      imageAsset: 'assets/ch4_p48_ending_burnout.png',
+      aspectRatio: 16 / 14,
+      headline: 'Ending Path: Burnout & Isolation',
+      body: '',
+      choices: const [],
+    ),
+
+    'ch4_p49_ending_tragic_cte_story': GamePage(
+      id: 'ch4_p49_ending_tragic_cte_story',
+      appBarTitle: 'Chapter 4 – Page 49',
+      imageAsset: 'assets/ch4_p49_ending_cte_story.png',
+      aspectRatio: 16 / 14,
+      headline: 'Ending Path: Tragic CTE Awareness Story',
+      body: '',
+      choices: const [],
+    ),
   };
 
   return GameState(
