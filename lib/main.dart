@@ -1124,7 +1124,7 @@ GameState _initialGame() {
     'ch4_intro': GamePage(
       id: 'ch4_intro',
       appBarTitle: 'Chapter 4 – Consequences & Endings',
-      imageAsset: 'assets/ch1_intro.png',
+      imageAsset: 'assets/ch4_intro.png',
       aspectRatio: 16 / 18,
       headline: 'Chapter 4: Preseason & First Impressions',
       body: '',
