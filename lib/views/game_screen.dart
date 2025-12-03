@@ -147,13 +147,11 @@ class _GameScreenState extends State<GameScreen> {
                           ),
                           const SizedBox(width: 16),
                         ],
-                        if (page.id != 'start' &&
-                            page.id != 'first_choice' &&
-                            page.id != 'pathB_B2') ...[
+                        if (page.id != 'start' && page.id != 'pathB_B2') ...[
                           ElevatedButton.icon(
                             onPressed: () {
                               notifier.value = notifier.value.copyWith(
-                                currentPageId: 'first_choice',
+                                currentPageId: 'start',
                               );
                             },
                             icon: const Icon(Icons.refresh),
