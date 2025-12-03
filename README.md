@@ -1,3 +1,7 @@
 # gamebook_app
 
-A new Flutter project.
+Group Members:
+
+Rahul Muthuswamy <- REPO OWNER
+
+Jake Zocco
