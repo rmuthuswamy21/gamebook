@@ -1332,15 +1332,7 @@ GameState _initialGame() {
       headline: 'Ending: Healthy Mind, New Path',
       body: '',
       choices: const [
-        GameChoice(
-          text: 'Restart the story.',
-          nextId: 'ch1_intro',
-          ph: 0,
-          mh: 0,
-          tc: 0,
-          ss: 0,
-          cr: 0,
-        ),
+      
       ],
     ),
 
@@ -1353,15 +1345,7 @@ GameState _initialGame() {
       headline: 'Ending: Early Warning Signs',
       body: '',
       choices: const [
-        GameChoice(
-          text: 'Restart the story.',
-          nextId: 'ch1_intro',
-          ph: 0,
-          mh: 0,
-          tc: 0,
-          ss: 0,
-          cr: 0,
-        ),
+      
       ],
     ),
 
@@ -1374,15 +1358,7 @@ GameState _initialGame() {
       headline: 'Ending: Living With the Damage',
       body: '',
       choices: const [
-        GameChoice(
-          text: 'Restart the story.',
-          nextId: 'ch1_intro',
-          ph: 0,
-          mh: 0,
-          tc: 0,
-          ss: 0,
-          cr: 0,
-        ),
+       
       ],
     ),
 
@@ -1395,15 +1371,7 @@ GameState _initialGame() {
       headline: 'Ending: Life Rewritten by CTE',
       body: '',
       choices: const [
-        GameChoice(
-          text: 'Restart the story.',
-          nextId: 'ch1_intro',
-          ph: 0,
-          mh: 0,
-          tc: 0,
-          ss: 0,
-          cr: 0,
-        ),
+       
       ],
     ),
 
@@ -1416,15 +1384,7 @@ GameState _initialGame() {
       headline: 'Ending: The Highest Cost',
       body: '',
       choices: const [
-        GameChoice(
-          text: 'Restart the story.',
-          nextId: 'ch1_intro',
-          ph: 0,
-          mh: 0,
-          tc: 0,
-          ss: 0,
-          cr: 0,
-        ),
+        
       ],
     ),
   };

@@ -152,6 +152,7 @@ class _GameScreenState extends State<GameScreen> {
                             onPressed: () {
                               notifier.value = notifier.value.copyWith(
                                 currentPageId: 'start',
+                                stats: const PlayerStats(),
                               );
                             },
                             icon: const Icon(Icons.refresh),
